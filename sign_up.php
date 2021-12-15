@@ -6,7 +6,7 @@
 	{
 		$name = mysqli_real_escape_string($con, $_POST['name']);
 		$email = mysqli_real_escape_string($con,$_POST['email']);
-        $mobile = mysqli_real_escape_string($con,$_POST['mobile']);
+       	        $mobile = mysqli_real_escape_string($con,$_POST['mobile']);
 		$password = mysqli_real_escape_string($con,$_POST['password']);
 		$cpassword = mysqli_real_escape_string($con,$_POST['cpassword']);
 
@@ -28,11 +28,11 @@
 		if(validate_mobile_email($mobile, $email))
 		{
   	        ?>
-<script>
-alert("Invalid email or mobile number");
-location.replace("sign_up.php");
-</script>
-<?php
+			<script>
+				alert("Invalid email or mobile number");
+				location.replace("sign_up.php");
+			</script>
+		<?php
 		}
 		else
 		{
@@ -44,12 +44,12 @@ location.replace("sign_up.php");
 
 		if($emailcount > 0)
 		{
-			?>
-<script>
-alert("Email Already exit");
-location.replace("login.php");
-</script>
-<?php
+		?>
+			<script>
+				alert("Email Already exit");
+				location.replace("login.php");
+			</script>
+		<?php
 		}
 		else
 		{
@@ -57,12 +57,12 @@ location.replace("login.php");
 
 			if($len<8)
 			{
-				?>
-<script>
-alert("Password must be 8 or more characters in length");
-location.replace("sign_up.php");
-</script>
-<?php
+			?>
+				<script>
+					alert("Password must be 8 or more characters in length");
+					location.replace("sign_up.php");
+				</script>
+			<?php
 			}
 			elseif($password == $cpassword)
 			{
@@ -72,31 +72,31 @@ location.replace("sign_up.php");
 
 				if($iquery) 
 				{
-					?>
-<script>
-alert("Account created successfully");
-location.replace("login.php");
-</script>
+				?>
+					<script>
+						alert("Account created successfully");
+						location.replace("login.php");
+					</script>
 
-<?php
+				<?php
 				}
 				else
 				{
-						?>
-<script>
-alert("Please check your connection");
-</script>
-<?php
+				?>
+					<script>
+						alert("Please check your connection");
+					</script>
+				<?php
 				}
 			}
 			else
 			{
-						?>
-<script>
-alert("Passwords are not matching");
-location.replace("sign_up.php");
-</script>
-<?php
+			?>
+				<script>
+					alert("Passwords are not matching");
+					location.replace("sign_up.php");
+				</script>
+			<?php
 			}
 		}
 	  }
