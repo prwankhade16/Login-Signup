@@ -39,22 +39,22 @@
 			if($db_pass === $password)
 			{
 				//$_SESSION["msg"] = "Login Successful";
-                ?>
-<script>
-location.replace("home.html");
-</script>
-<?php
+                	?>
+				<script>
+					location.replace("home.html");
+				</script>
+			<?php
 			}
 			else
 			{
-                $_SESSION["total_attempts"] += 1;
-                $_SESSION["msg"] = "Email or Password is Incorrect";
+        		        $_SESSION["total_attempts"] += 1;
+                		$_SESSION["msg"] = "Email or Password is Incorrect";
 			}
 		}
 		else
 		{
-            $_SESSION["total_attempts"] += 1;
-            $_SESSION["msg"] = "Please Check your Login Credentials";
+             	     $_SESSION["total_attempts"] += 1;
+            	     $_SESSION["msg"] = "Please Check your Login Credentials";
 		}
 	}
 ?>
